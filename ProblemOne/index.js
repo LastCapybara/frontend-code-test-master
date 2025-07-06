@@ -76,10 +76,18 @@ function mutateArray(a) {
     some_total: some_array.reduce((acc, num) => acc + num, 0),
   }));
 
+  const filteredArr = countedArr.filter((item) => item.guest_type === "guest");
 
-  const filteredArr = countedArr.filter((item) => item.guest_type === 'guest')
+  const sortedArr = filteredArr.sort((a, b) => {
+    const lastNameCoparison = a.last_name.localeCompare(b.last_name);
+    if (lastNameCoparison !== 0) {
+      return lastNameCoparison;
+    }
 
-  return filteredArr;
+    return a.first_name.localeCompare(b.first_name);
+  });
+
+  return sortedArr;
 }
 
 $(document).ready(function () {
