@@ -71,7 +71,12 @@ function mutateArray(a) {
 
   const flatArr = a.map((el) => flatObj(el));
 
-  return flatArr;
+  const countedArr = flatArr.map(({ some_array, ...rest }) => ({
+    ...rest,
+    some_total: some_array.reduce((acc, num) => acc + num, 0),
+  }));
+
+  return countedArr;
 }
 
 $(document).ready(function () {
