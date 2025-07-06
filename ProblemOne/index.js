@@ -76,7 +76,10 @@ function mutateArray(a) {
     some_total: some_array.reduce((acc, num) => acc + num, 0),
   }));
 
-  return countedArr;
+
+  const filteredArr = countedArr.filter((item) => item.guest_type === 'guest')
+
+  return filteredArr;
 }
 
 $(document).ready(function () {
