@@ -1,0 +1,77 @@
+.calculator {
+    width: clamp(280px, 70vw, 450px);
+    background: rgb(38, 38, 38);
+    border-radius: 2vw;
+    padding: 1.5vw;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+  }
+
+  .display {
+    color: white;
+    font-size: clamp(36px, 6vw, 76px);
+    text-align: right;
+    padding: 0.5vw 1vw;
+    min-height: clamp(60px, 7vw, 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .expression {
+    word-break: break-all;
+    font-weight: lighter;
+    font-size: clamp(28px, 4.5vw, 60px);
+    opacity: 0.7;
+  }
+
+  .current-value {
+    font-size: clamp(36px, 6vw, 76px);
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.15vw;
+    font-weight: lighter;
+  }
+
+  .btn.zero {
+    grid-column: span 2;
+    justify-content: start;
+    text-align: start;
+    padding-left: 22%;
+    font-weight: lighter;
+  }
+
+  .btn {
+    background: #bebebee4;
+    color: 'black';
+    font-size: clamp(18px, 2vw, 26px);
+    padding: clamp(25px, 2vw, 25px) 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn:active {
+    background: #555;
+  }
+
+  .btn.operator {
+    background: #ff8c00;
+    color: #fff;
+  }
+
+  .btn.equals {
+    background: #ff8c00;
+  }
